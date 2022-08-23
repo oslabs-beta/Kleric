@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+import { Request, Response, NextFunction } from 'express';
 
 const cors = require('cors');
 
@@ -10,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   return res.status(200).send('Hello World!');
 }); 
 
