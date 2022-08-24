@@ -1,5 +1,15 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+import Routing from '../Routing';
+// import { Routes, Route } from 'react-router-dom';
+import Container from '@mui/material/Container';
+
+import {
+  ThemeProvider,
+  styled,
+  createTheme,
+  useTheme,
+} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,10 +26,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import Content from './content';
 
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsIcon from '@mui/icons-material/Settings';
+// import Content from './content';
 
 const drawerWidth = 240;
 
@@ -72,6 +84,36 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
+const indigoTheme = createTheme({
+  palette: {
+    // mode: 'dark',
+    primary: {
+      main: '#201e2b',
+    },
+  },
+});
+
+declare module '@mui/material/styles' {
+  interface Theme {
+    status: {
+      primary: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status?: {
+      primary?: string;
+    };
+  }
+}
+
+interface PaletteColor {
+  light?: string;
+  main: string;
+  dark?: string;
+  contrastText?: string;
+}
+
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -87,43 +129,84 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Kleric
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
+      <ThemeProvider theme={indigoTheme}>
+        <AppBar position='fixed' open={open}>
+          <Toolbar>
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              onClick={handleDrawerOpen}
+              edge='start'
+              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant='h6' noWrap component='div'>
+              <span className='title'>Kleric</span>
+              <span className='plus'>
+                +
+              </span>
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </ThemeProvider>
+
+      <ThemeProvider theme={indigoTheme}>
+        <Drawer
+          sx={{
             width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+              boxSizing: 'border-box',
+            },
+          }}
+          variant='persistent'
+          anchor='left'
+          open={open}
+        >
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'ltr' ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )}
+            </IconButton>
+          </DrawerHeader>
+          <Divider />
+          <List>
+            <Link to='/dashboard'>
+              <ListItem key='Dashboard' disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DashboardIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Dashboard' color='secondary' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to='/reports'>
+              <ListItem key='Reports' disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <AssessmentIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Reports' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to='/notifications'>
+              <ListItem key='Alerts' disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <NotificationsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Alerts' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -132,11 +215,21 @@ export default function PersistentDrawerLeft() {
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          ))} */}
+          </List>
+          <Divider />
+          <List>
+            <Link to='/settings'>
+              <ListItem key='Settings' disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <SettingsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Settings' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -145,13 +238,16 @@ export default function PersistentDrawerLeft() {
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
-          ))}
-        </List>
-      </Drawer>
+          ))} */}
+          </List>
+        </Drawer>
+      </ThemeProvider>
       <Main open={open}>
         <DrawerHeader />
         <Typography paragraph>
-            <Content/>
+          <Container>
+            <Routing />
+          </Container>
         </Typography>
         {/* <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

@@ -1,16 +1,15 @@
-import React from "react";
-import PersistentDrawerLeft from "./components/sidebar";
+import React from 'react';
+import PersistentDrawerLeft from './components/sidebar';
+import Routing from './Routing';
 import './styles.scss';
+import Sidebar from './components/sidebar';
 
 const App = () => {
   return (
     <>
-      <PersistentDrawerLeft/>
-      {/* <div>
-        <h1>Hi from React!</h1>
-      </div> */}
+      <PersistentDrawerLeft />
     </>
   );
-}
+};
 
 export default App;
