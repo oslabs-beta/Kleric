@@ -1,11 +1,15 @@
 import React from "react";
+import PersistentDrawerLeft from "./components/sidebar";
 import './styles.scss';
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello from React!</h1>
-    </div>
+    <>
+      <PersistentDrawerLeft/>
+      {/* <div>
+        <h1>Hi from React!</h1>
+      </div> */}
+    </>
   );
 }
 
