@@ -10,11 +10,17 @@ $subtle-button: #322e45;
 $puce: #b5a6c3;
 $icon-color: #a5a3b0;
 
-// font-family: 'Comfortaa', cursive;
-// font-family: 'Dosis', sans-serif;
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Nunito', sans-serif;
-// font-family: 'Poppins', sans-serif;
+::selection {
+  background: rgba(181, 166, 195, 0.544);
+  color: #232031;
+  font-weight: 700 !important;
+}
+
+// font-family: 'Comfortaa', cursive; // like for sidebar
+// font-family: 'Dosis', sans-serif; // no
+// font-family: 'Montserrat', sans-serif; // great for dashboard
+// font-family: 'Nunito', sans-serif; // good for sidebar
+// font-family: 'Poppins', sans-serif; // also good for dashboard or misc font
 // font-family: 'Press Start 2P', cursive;
 // font-family: 'Silkscreen', cursive;
 
@@ -28,15 +34,20 @@ html {
   ) !important;
   height: 100vh !important;
   color: $puce !important;
-  font-family: 'Comfortaa', cursive;
 }
 
+// 
+p {
+  font-family: 'Poppins', sans-serif !important;
+}
+// sidebar font color
 a,
 path {
   text-decoration: none !important;
   color: $puce !important;
 }
 
+// Title font
 .MuiTypography-h6 {
   margin-left: 0.25em !important;
   padding: 0.15em !important;
@@ -67,18 +78,12 @@ path {
   }
 }
 
-// .MuiTypography-h6 .plus {
-//   background: -webkit-linear-gradient(#eee, rgb(130, 109, 25)) !important;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   filter: drop-shadow(-3px -1px rgb(88, 76, 29))
-//     drop-shadow(-3px -1px rgb(52, 45, 17)) drop-shadow(-3px -1px rgb(24, 21, 8));
-// }
-
-// path {
-//     color: $icon-color !important;
-// }
-
+// Sidebar background
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   background: $subtle-button !important;
+}
+
+// Sidebar fonts
+.css-10hburv-MuiTypography-root {
+  font-family: 'Silkscreen', cursive !important;
 }
