@@ -10,10 +10,10 @@ router.get('/', (req: Request, res: Response) => {
 router.get('/api/metrics', async (req: Request, res: Response) => {
   console.log('getting metrics')
   let topPodsData = await topPods();
-  topPodsData = JSON.parse(toJSON(topPodsData));
+  topPodsData = JSON.parse(toJSON(topPodsData)); // use toJSON() 
 
   let topContainersData = await topContainers();
-  topContainersData = JSON.parse(toJSON(topContainersData));
+  topContainersData = JSON.parse(toJSON(topContainersData)); // use toJSON()
 
   return res.status(200).json({
     topPods: topPodsData,
@@ -21,11 +21,14 @@ router.get('/api/metrics', async (req: Request, res: Response) => {
   });
 });
   
-function toJSON(data: any) {
+function toJSON(data: any) {  // necessary to render the entire dataset in the browser
   if (data !== undefined) {
     return JSON.stringify(data, (_, v) => typeof v === 'bigint' ? `${v}#bigint` : v).replace(/"(-?\d+)#bigint"/g, (_, a) => a);
   } else return '';
 }
+
+// add more functions from https://github.com/kubernetes-client/javascript/tree/master/examples
+// below are the functions from 'top_pods.js'
 
 const kc = new k8s.KubeConfig();
 kc.loadFromDefault();
@@ -36,7 +39,7 @@ k8sApi.listNamespacedPod('default').then((res: any) => {
 
 async function topPods() {
   const metricsClient = new k8s.Metrics(kc);
-  return k8s.topPods(k8sApi, metricsClient, "kube-system")
+  return k8s.topPods(k8sApi, metricsClient, "kube-system")  // added return keyword
   .then((pods: any) => {
 
     const podsColumns = pods.map((pod: any) => {
@@ -48,13 +51,13 @@ async function topPods() {
     });
     console.log("TOP PODS")
     // console.table(podsColumns)
-    return podsColumns;
+    return podsColumns;   // added return statement
   });
 }
 
 async function topContainers() {
   const metricsClient = new k8s.Metrics(kc);
-  return k8s.topPods(k8sApi, metricsClient, "kube-system")
+  return k8s.topPods(k8sApi, metricsClient, "kube-system")  // added return keyword
   .then((pods: any) => {
 
       const podsAndContainersColumns = pods.flatMap((pod: any) => {
@@ -70,7 +73,7 @@ async function topContainers() {
 
       console.log("TOP CONTAINERS")
       // console.table(podsAndContainersColumns)
-      return podsAndContainersColumns;
+      return podsAndContainersColumns;  // added return statement
   });
 }
 
