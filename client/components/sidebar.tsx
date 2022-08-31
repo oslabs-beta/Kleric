@@ -176,7 +176,7 @@ export default function PersistentDrawerLeft() {
           </DrawerHeader>
           <Divider />
           <List>
-            <Link to='/dashboard'>
+            <Link to='/'>
               <ListItem key='Dashboard' disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -244,11 +244,11 @@ export default function PersistentDrawerLeft() {
       </ThemeProvider>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph>
+        {/* <Typography> */}
           <Container>
             <Routing />
           </Container>
-        </Typography>
+        {/* </Typography> */}
         {/* <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

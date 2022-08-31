@@ -8,12 +8,12 @@ const Routing = () => {
   return (
     <Routes>
       <Route path='/' element={<Dashboard />} />
-      <Route path='/dashboard' element={<Navigate to='/' />} />
+      {/* <Route path='/dashboard' element={<Navigate to='/' />} /> */}
       <Route path='/notifications' element={<Notifications />} />
       <Route path='/settings' element={<Settings />} />
       <Route path='/reports' element={<Reports />} />
     </Routes>
   );
-}
+};
 
-export default Routing
+export default Routing;

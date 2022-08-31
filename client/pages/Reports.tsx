@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
+import fetchKubernetesData from '../utils/fetchK8sData';
 
 const Reports = () => {
+  console.log('hi from reports');
+  fetchKubernetesData();
+
   return (
     <div>
       <h1>Reports</h1>

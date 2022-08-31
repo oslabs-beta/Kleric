@@ -41,7 +41,7 @@ module.exports = {
       directory: path.join(__dirname, './dist'),
     },
     proxy: {
-      '/api**': 'http://localhost:3000',
+      '/api': 'http://localhost:3000/',
       secure: false
     }
   },
