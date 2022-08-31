@@ -5,9 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> // Re-renders index.tsx twice during development
     <BrowserRouter>
       <App />
     </BrowserRouter>
-   </React.StrictMode>
+  //  </React.StrictMode>
 );

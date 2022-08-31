@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Notifications = () => {
+  console.log('hi from notifications')
   return (
     <div>
       <h1>Notifications</h1>

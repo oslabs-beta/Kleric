@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Settings = () => {
+  console.log('hi from settings')
   return (
     <div>
       <h1>Settings</h1>

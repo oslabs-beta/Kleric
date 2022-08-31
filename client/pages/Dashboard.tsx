@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
+import fetchKubernetesData from '../utils/fetchK8sData';
 
 const Dashboard = () => {
+
+  fetchKubernetesData()
+
   return (
     <div>
       <h1>Dashboard</h1>
@@ -11,4 +15,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;
