@@ -1,10 +1,17 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 import { Request, Response, NextFunction } from 'express';
-const k8s = require('@kubernetes/client-node');
+import * as k8s from '@kubernetes/client-node';
+import { promController } from '../controllers/promController';
 
 router.get('/', (req: Request, res: Response) => {
+  console.log('hello from root');
   return res.status(200).json('Hello World!');
+}); 
+
+router.get('/api/prometheus', promController.promTest, (req: Request, res: Response) => {
+  console.log('finished middleware');
+  return res.status(200).json(res.locals.promTest);
 }); 
   
 router.get('/api/metrics', async (req: Request, res: Response) => {
@@ -49,7 +56,7 @@ async function topPods() {
             "MEMORY(bytes)": pod.Memory.CurrentUsage,
         }
     });
-    console.log("TOP PODS")
+    // console.log("TOP PODS")
     // console.table(podsColumns)
     return podsColumns;   // added return statement
   });
@@ -70,8 +77,7 @@ async function topContainers() {
           };
         })
       });
-
-      console.log("TOP CONTAINERS")
+      // console.log("TOP CONTAINERS")
       // console.table(podsAndContainersColumns)
       return podsAndContainersColumns;  // added return statement
   });

@@ -36,7 +36,6 @@ html {
   color: $puce !important;
 }
 
-// 
 p {
   font-family: 'Poppins', sans-serif !important;
 }
@@ -86,4 +85,8 @@ path {
 // Sidebar fonts
 .css-10hburv-MuiTypography-root {
   font-family: 'Silkscreen', cursive !important;
+}
+
+iframe {
+  background-color: transparent;
 }
