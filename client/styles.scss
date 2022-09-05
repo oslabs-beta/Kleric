@@ -32,7 +32,7 @@ html {
     rgba(35, 33, 49, 1) 46%,
     $subtle-button 94%
   ) !important;
-  height: 100vh !important;
+  height: auto !important;
   color: $puce !important;
 }
 
@@ -52,7 +52,7 @@ path {
   padding: 0.15em !important;
   color: white;
   font-family: 'Press Start 2P', cursive !important;
-  text-align: center;
+  text-align: center !important;
   font-size: 2em !important;
   letter-spacing: -1px !important;
   word-spacing: 1px !important;
