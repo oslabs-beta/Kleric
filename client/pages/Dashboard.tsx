@@ -2,12 +2,14 @@ import React from 'react';
 import fetchKubernetesData from '../utils/fetchK8sData';
 import fetchNodeData from '../utils/fetchNodeData';
 import fetchPrometheusData from '../utils/fetchPrometheusData';
+import monitorMemoryUsage from '../utils/monitorMemoryUsage';
 
 const Dashboard = () => {
 
   fetchKubernetesData();
   fetchPrometheusData();
   fetchNodeData();
+  monitorMemoryUsage();
 
   return (
     <div>

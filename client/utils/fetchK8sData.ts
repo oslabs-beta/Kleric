@@ -3,7 +3,7 @@ async function fetchKubernetesData() {
   .then(res => res.json())
   .then(data => {
     console.log('Successfully fetched kubernetes cluster data!');
-    console.log(data)
+    console.log(data);
   })
   .catch(err => {
     console.log(err)

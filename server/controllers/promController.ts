@@ -65,6 +65,8 @@ export const promController = {
     };
   },
 
+  // CPU, memory, and disk
+
   retrieveMemory: async (req: Request, res: Response, next: NextFunction) => {
     try {
       // extract 'node_memory_Active_bytes' from node metrics

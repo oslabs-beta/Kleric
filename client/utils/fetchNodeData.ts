@@ -3,7 +3,7 @@ async function fetchNodeData() {
     .then(res => res.json())
     .then(data => {
       console.log('Successfully fetched data from node!');
-      console.log(data)
+      console.log(data);
     })
     .catch(err => {
       console.log(err)

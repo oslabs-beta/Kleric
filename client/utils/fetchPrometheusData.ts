@@ -3,7 +3,7 @@ async function fetchPrometheusData() {
     .then(res => res.json())
     .then(data => {
       console.log('Successfully fetched data from prometheus!');
-      console.log(data)
+      console.log(data);
     })
     .catch(err => {
       console.log(err)
