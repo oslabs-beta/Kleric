@@ -5,17 +5,28 @@ import * as k8s from '@kubernetes/client-node';
 import { promController } from '../controllers/promController';
 
 router.get('/', (req: Request, res: Response) => {
-  console.log('hello from root');
+  // console.log('hello from root');
   return res.status(200).json('Hello World!');
 }); 
 
-router.get('/api/prometheus', promController.promTest, (req: Request, res: Response) => {
-  console.log('finished middleware');
-  return res.status(200).json(res.locals.promTest);
+router.get('/api/prometheus', promController.promMetrics, (req: Request, res: Response) => {
+  // console.log('finished promMetrics middleware');
+  return res.status(200).json(res.locals.promMetrics);
 }); 
+
+router.get('/api/node', promController.nodeMetrics, (req: Request, res: Response) => {
+  // console.log('finished nodeMetrics middleware');
+  return res.status(200).json(res.locals.nodeMetrics);
+});
+
+router.get('/api/monitorMemory', promController.nodeMetrics, promController.retrieveMemory, (req: Request, res: Response) => {
+  const memory = res.locals.memory;
+  if (memory > 1000000000) return res.status(200).json({result: { memory, alert: true }});
+  else return res.status(200).json({ result: { memory, alert: false }});
+});
   
 router.get('/api/metrics', async (req: Request, res: Response) => {
-  console.log('getting metrics')
+  // console.log('getting k8s metrics');
   let topPodsData = await topPods();
   topPodsData = JSON.parse(toJSON(topPodsData)); // use toJSON() 
 
@@ -82,5 +93,8 @@ async function topContainers() {
       return podsAndContainersColumns;  // added return statement
   });
 }
+
+router.use((req: Request, res: Response) => res.sendStatus(404));
+
 
 module.exports = router;

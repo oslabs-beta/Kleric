@@ -32,7 +32,8 @@ html {
     rgba(35, 33, 49, 1) 46%,
     $subtle-button 94%
   ) !important;
-  height: auto !important;
+  min-height: 100vh !important;
+  max-height: auto !important;
   color: $puce !important;
 }
 
