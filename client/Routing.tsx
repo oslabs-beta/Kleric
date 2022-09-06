@@ -12,6 +12,7 @@ const Routing = () => {
       <Route path='/notifications' element={<Notifications />} />
       <Route path='/settings' element={<Settings />} />
       <Route path='/reports' element={<Reports />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };
