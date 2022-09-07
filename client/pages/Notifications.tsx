@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import DiscreteSlider from '../components/slider';
 
 const Notifications = () => {
   console.log('hi from notifications')
   return (
     <div>
       <h1>Notifications</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid minima tempore delectus laudantium ipsum placeat, facilis similique, repudiandae pariatur laboriosam atque aliquam, id iste quibusdam alias soluta officiis voluptatibus beatae.</p>
+      <h4>Set your alerts for the following metrics:</h4>
+
+      <h4>Memory (in megabytes)</h4><br/>   
+      <DiscreteSlider/>
+      <p>Any time the memory exceeds this number, you will receive an alert.</p>
     </div>
   )
 }

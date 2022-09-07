@@ -37,7 +37,8 @@ html {
   color: $puce !important;
 }
 
-p {
+p, .MuiSlider-markLabel {
+  color: $puce !important;
   font-family: 'Poppins', sans-serif !important;
 }
 // sidebar font color
@@ -84,10 +85,18 @@ path {
 }
 
 // Sidebar fonts
-.css-10hburv-MuiTypography-root {
+.css-10hburv-MuiTypography-root, .MuiSlider-valueLabelLabel {
   font-family: 'Silkscreen', cursive !important;
 }
 
 iframe {
   background-color: transparent;
+}
+
+.MuiSlider-valueLabelOpen, .MuiSlider-valueLabel {
+  background-color: $subtle-button !important;
+}
+
+.css-adeloa-MuiSlider-root {
+  color: #684889 !important;
 }
