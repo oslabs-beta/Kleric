@@ -4,12 +4,15 @@ Kleric is an open source Kubernetes cluster monitoring tool. We implement a frie
 
 # Current Features
 - Display a Dashboard that shows metrics and a graph that shows reports
-https://i.gyazo.com/7519f916762e2985e761029c4e5eb1dd.gif
-https://i.gyazo.com/d98e8712394ed6652812c152e89fe352.gif
+![image](https://user-images.githubusercontent.com/104526811/189206473-d1f8c31d-db88-4223-86d6-c8247b2da31d.png)
+
+![image](https://user-images.githubusercontent.com/104526811/189206532-1b00f91d-5045-49af-8461-bcc4c1673358.png)
 
 
 - Get an Alert any time the memory exceeds a number in memory
-https://i.gyazo.com/6b90b9ab298ba1670bd980a30b807a36.gif
+
+![image](https://user-images.githubusercontent.com/104526811/189206559-5bbd2e51-dd1a-4d4e-9959-89abfbcc7a01.png)
+
 
 # Strech Goals
 - Build a Desktop App use Electron
