@@ -19,7 +19,7 @@ Kleric is an open source Kubernetes cluster monitoring tool. We implement a frie
 # Installation
 1. Clone this repo down to your local machine
 2. Install minikube from here https://minikube.sigs.k8s.io/docs/start/
-3. Run minikube with minikube start
+3. Run minikube with `minikube start`
 4. Open new second tab to run - kubectl proxy --port=8080 & // accesses k8 API on localhost:8080
 5. Open third tab for  - kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml // views API on localhost:8080 (and localhost:8080/api, localhost:8080/api/v1, etc. etc.)
 6. minikube addons list            // shows a list of current addons
