@@ -24,8 +24,6 @@ Kleric is an open source Kubernetes cluster monitoring tool. We implement a frie
 
 * React Router
 
-* Redux
-
 * Typescript
 
 # Core Team:
