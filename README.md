@@ -21,10 +21,11 @@ Kleric is an open source Kubernetes cluster monitoring tool. We implement a frie
 2. Install minikube from here https://minikube.sigs.k8s.io/docs/start/
 3. Run minikube with `minikube start`
 4. Open new second tab to run `kubectl proxy --port=8080 &`, which gives us access to the Kubernetes API on localhost:8080
-5. Open third tab for  - kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml // views API on localhost:8080 (and localhost:8080/api, localhost:8080/api/v1, etc. etc.)
-6. minikube addons list            // shows a list of current addons
-7. minikube addons enable metrics-server    // lets us enable metrics-server if it's missing from the addons list
-8. npm run dev // to view API at localhost:3000/api/metrics
+5. Open a third tab to run `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`, which gives us access to the kubernetes metrics servers
+6. Verify that the metrics-server service is currently enabled by running `minikube addons list`
+7. Enable our metrics server, if necessary: `minikube addons enable metrics-server`
+8. Initialize Kleric by running `npm run dev`. You can now access the kubernetes metrics API at `localhost:3000/api/metrics`!
+
 # Built With
 
 * Docker
