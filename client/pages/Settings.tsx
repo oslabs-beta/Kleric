@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import EmailField from '../components/inputbox';
 
 const Settings = () => {
   console.log('hi from settings')
   return (
     <div>
       <h1>Settings</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus accusantium deleniti alias ipsum veniam cumque sed! Cupiditate ullam fuga ea praesentium, necessitatibus voluptatum error illo consequuntur optio dolores quo quos.</p>
+      <p>Enter your email here:</p>
+      <EmailField/>
     </div>
   )
 }

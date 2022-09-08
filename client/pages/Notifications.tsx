@@ -1,16 +1,24 @@
 import React from 'react';
-import DiscreteSlider from '../components/slider';
+import MemorySlider from '../components/memoryslider';
+import monitorMemoryUsage from '../utils/monitorMemoryUsage';
+import CPUSlider from '../components/cpuslider';
 
 const Notifications = () => {
-  console.log('hi from notifications')
+
+  monitorMemoryUsage();
+
   return (
     <div>
       <h1>Notifications</h1>
-      <h4>Set your alerts for the following metrics:</h4>
+      <h5>Set your alerts for the following metrics:</h5>
 
       <h4>Memory (in megabytes)</h4><br/>   
-      <DiscreteSlider/>
-      <p>Any time the memory exceeds this number, you will receive an alert.</p>
+      <MemorySlider/>
+      <p>Any time the memory exceeds this number, you will receive an alert.</p><br/>
+
+      <h4>CPU Usage</h4><br/>
+      <CPUSlider/>
+      <p>Any time the CPU exceeds this number, you will receive an alert.</p><br/>
     </div>
   )
 }

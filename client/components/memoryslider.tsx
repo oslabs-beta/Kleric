@@ -26,12 +26,12 @@ function valuetext(value: number) {
   return `${value} MB`;
 }
 
-export default function DiscreteSlider() {
+export default function MemorySlider() {
   return (
     <Box sx={{ width: 400 }}>
       <Slider
         aria-label="Memory (megabytes)"
-        defaultValue={100}
+        defaultValue={1000}
         getAriaValueText={valuetext}
         valueLabelDisplay="on"
         step={10}
