@@ -12,7 +12,7 @@ Kleric is an open source Kubernetes cluster monitoring tool. We implement a frie
 ![image](https://user-images.githubusercontent.com/104526811/189206559-5bbd2e51-dd1a-4d4e-9959-89abfbcc7a01.png)
 
 
-# Strech Goals
+# Stretch Goals
 - Build a Desktop App use Electron
 - Cloud Deployment to AWS
 - Database storage for capturing historic data on cluster metric and previous rollouts
