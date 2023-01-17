@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/client/App.tsx',
+  entry: './client/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -20,6 +20,11 @@ module.exports = {
         exclude: /node_modules/,
         use: ['ts-loader'],
       },
+      {
+        test: /\.(s(a|c)ss)$/,
+        // When in production mode use MiniCssExtractPlugin.loader instead of style-loader
+        use: ['style-loader', 'css-loader', 'sass-loader'] // webpack applies loaders from last to first
+      }
     ],
   },
   resolve: { 
@@ -27,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/client/index.html',
+      template: './client/index.html',
       filename: './index.html',
     })
   ],
@@ -36,7 +41,7 @@ module.exports = {
       directory: path.join(__dirname, './dist'),
     },
     proxy: {
-      '/api**': 'http://localhost:3000',
+      '/api': 'http://localhost:3000/',
       secure: false
     }
   },

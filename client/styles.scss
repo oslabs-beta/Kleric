@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Dosis&family=Montserrat&family=Nunito&family=Poppins:wght@200&family=Press+Start+2P&family=Silkscreen&display=swap');
+
+$dark-purple: #231d41;
+$dark-main: #232031;
+$light-mid-purp: #352e57;
+$light-purple: #684889;
+$dashboard-background: #231e3b;
+$sidebar-background: #232131;
+$subtle-button: #322e45;
+$puce: #b5a6c3;
+$icon-color: #a5a3b0;
+
+::selection {
+  background: rgba(181, 166, 195, 0.544);
+  color: #232031;
+  font-weight: 700 !important;
+}
+
+// font-family: 'Comfortaa', cursive; // like for sidebar
+// font-family: 'Dosis', sans-serif; // no
+// font-family: 'Montserrat', sans-serif; // great for dashboard
+// font-family: 'Nunito', sans-serif; // good for sidebar
+// font-family: 'Poppins', sans-serif; // also good for dashboard or misc font
+// font-family: 'Press Start 2P', cursive;
+// font-family: 'Silkscreen', cursive;
+
+body,
+html {
+  background: rgb(35, 33, 49) !important;
+  background: linear-gradient(
+    155deg,
+    rgba(35, 33, 49, 1) 46%,
+    $subtle-button 94%
+  ) !important;
+  min-height: 100vh !important;
+  max-height: auto !important;
+  color: $puce !important;
+}
+
+p, .MuiSlider-markLabel {
+  color: $puce !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+// sidebar font color
+a,
+path {
+  text-decoration: none !important;
+  color: $puce !important;
+}
+
+// Title font
+.MuiTypography-h6 {
+  margin-left: 0.25em !important;
+  padding: 0.15em !important;
+  color: white;
+  font-family: 'Press Start 2P', cursive !important;
+  text-align: center !important;
+  font-size: 2em !important;
+  letter-spacing: -1px !important;
+  word-spacing: 1px !important;
+
+  .title {
+    background: -webkit-linear-gradient(#eee, rgb(69, 43, 94));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(-4px -1px rgb(66, 36, 76))
+    drop-shadow(-4px -1px rgb(46, 25, 53))
+    drop-shadow(-4px -1px rgb(30, 16, 34));
+  }
+
+  .plus {
+      font-size: 1em !important;
+    background: -webkit-linear-gradient(#eee, rgb(130, 109, 25));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(-3px -1px rgb(88, 76, 29))
+      drop-shadow(-3px -1px rgb(52, 45, 17))
+      drop-shadow(-3px -1px rgb(24, 21, 8));
+  }
+}
+
+// Sidebar background
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+  background: $subtle-button !important;
+}
+
+// Sidebar fonts
+.css-10hburv-MuiTypography-root, .MuiSlider-valueLabelLabel {
+  font-family: 'Silkscreen', cursive !important;
+}
+
+iframe {
+  background-color: transparent;
+}
+
+.MuiSlider-valueLabelOpen, .MuiSlider-valueLabel {
+  background-color: $subtle-button !important;
+}
+
+.css-adeloa-MuiSlider-root {
+  color: #684889 !important;
+}
