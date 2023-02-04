@@ -13,4 +13,4 @@ async function monitorMemoryUsage() {
   }
 }
   
-  export default monitorMemoryUsage;
+export default monitorMemoryUsage;

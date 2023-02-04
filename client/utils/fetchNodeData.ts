@@ -12,4 +12,4 @@ async function fetchNodeData() {
   }
 }
   
-  export default fetchNodeData;
+export default fetchNodeData;

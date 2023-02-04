@@ -1,7 +1,7 @@
 import React from 'react';
+import Sidebar from './components/Sidebar';
 import Routing from './Routing';
 import './styles.scss';
-import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (

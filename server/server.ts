@@ -6,6 +6,7 @@ const cors = require('cors');
 const apiRouter = require('./routes/apiRouter');
 
 const PORT = 3434;
+
 const app = express();
 
 app.use(cors());
