@@ -1,13 +1,15 @@
 async function fetchKubernetesData() {
-  fetch('/api/metrics')
-  .then(res => res.json())
-  .then(data => {
-    console.log('Successfully fetched kubernetes cluster data!');
-    console.log(data);
-  })
-  .catch(err => {
-    console.log(err)
-  })
+  try {
+    const response = await fetch('/api/metrics');
+    if (!response.ok) throw Error(response.statusText);
+    else {
+      const data = await response.json();
+      console.log('Successfully fetched kubernetes cluster data!');
+      console.log(data);
+    } 
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export default fetchKubernetesData;

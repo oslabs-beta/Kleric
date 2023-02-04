@@ -1,7 +1,6 @@
-import React from 'react';
-import MemorySlider from '../components/memoryslider';
+import MemorySlider from '../components/MemorySlider';
 import monitorMemoryUsage from '../utils/monitorMemoryUsage';
-import CPUSlider from '../components/cpuslider';
+import CPUSlider from '../components/CPUSlider';
 
 const Notifications = () => {
 

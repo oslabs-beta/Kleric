@@ -114,7 +114,7 @@ interface PaletteColor {
   contrastText?: string;
 }
 
-export default function PersistentDrawerLeft() {
+export default function Sidebar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
